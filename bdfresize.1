@@ -1,0 +1,55 @@
+.TH BDFRESIZE 1 "12 October 1992" "BDF"
+.SH NAME
+bdfresize \- Resize BDF Format Font
+.SH SYNOPSIS
+bdfresize [-v] [-b \fInumber\fP] [-[whf] \fIfactor\fP] [\fIbdf-file\fP]
+.SH DESCRIPTION
+.I Bdfresize
+is a command to magnify or reduce fonts which are described with
+the standard BDF format.
+If
+.I bdf-file
+is not specified, it reads from stdin.
+.I Bdfresize
+outputs the result to stdout in BDF format.
+Some COMMENT lines are inserted to the result font.
+FONT name is modified depending on the resize factor
+if the name is described in XLFD format.
+SIZE, FONTBOUNDINGBIX, SWIDTH, DWIDTH, BBX
+and some property lines are also modified.
+Other lines are copied from source.
+If a syntax error occurs in a source font,
+.I bdfresize
+notices it and stops the whole process.
+.SH OPTIONS
+.TP 8
+.BI \-v
+Show the version number and exit.
+.TP 8
+.BI \-b " number"
+Specify the blackness.
+Pixel values of a resized font are decided by this value.
+Default is 4.
+.TP 8
+.BI \-w " factor"
+Specify the resize factor for the font width.
+.TP 8
+.BI \-h " factor"
+Specify the resize factor for the font height.
+.TP 8
+.BI \-f " factor"
+Same as ``\fB-w\fP \fIfactor\fP \fB-h\fP \fIfactor\fP''.
+.PP
+\fIfactor\fP is described in either of following forms.
+.br
+	<digits>
+.br
+	<digits>/<digits>
+.SH "SEE ALSO"
+bdftopcf(1), xfed(1),
+Character Bitmap Distribution Format 2.1 (Adobe Systems, Inc.),
+X Logical Font Description Conventions (MIT X Consortium Stardard)
+.SH AUTHOR
+Copyright (C) 1988, 1992 Hiroto Kagotani.
+.br
+	kagotani@cs.titech.ac.jp

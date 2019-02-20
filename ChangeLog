@@ -1,0 +1,108 @@
+2001-01-16  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5 Release.
+
+2000-12-12  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre6 Release.
+
+	* bdfresize.c: Include "getopt.h" instead of <unistd.h>.
+
+	* getopt.c: New file.
+
+	* getopt.h: Ditto.
+
+2000-12-12  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre5 Release.
+
+	* def.h (MAX): Define MIN(), MAX() and howmany().
+
+	* charresize.c: Never include sys/param.h, sys/sysmacros.h and
+	strings.h.
+
+	* bdfresize.c: Never include sys/param.h and strings.h.
+
+	* configure.in: Check existence of memset().  Never check
+	existence of sys/sysmacros.h
+
+	* memset.c: New file.
+
+	* Makefile.am (bdfresize_LDADD): Add @LIBOBJS@
+
+2000-12-12  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre4 Release.
+
+	* configure.in: Check existence of sys/sysmacros.h.
+
+	* bdfresize.c (main): Use strchr() instead of outdated index().
+
+	* charresize.c: Not include sys/sysmacros.h if unavailable.
+	(processChar): Use memset() instead of outdated bzero().
+
+2000-12-11  Hiroto Kagotani <kagotani@cs.titech.ac.jp>
+
+	* bdfresize.c (font): Fix casting of 1st argument of isspace().
+	(isnum): Fix casting of 1st argument of isdigit().
+
+	* charresize.c (get_byte): Fix casting of 1st argument of
+	isxdigit().
+
+2000-12-11  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre3 Release.
+
+	* ALL: Change License to GPL.
+
+2000-12-11  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre2 Release.
+
+	* configure.in: Add strings.h to AC_CHECK_HEADERS.
+
+	* bdfresize.c: Not include strings.h and unistd.h if unavailable.
+
+	* charresize.c: Not include strings.h if unavailable.
+
+2000-12-11  Masao Uebayashi <uebayasi@soum.co.jp>
+
+	* bdfresize.c: Include strings.h.
+	(font): Explicit casting of 1st argument of isspace().
+	(isnum): Explicit casting of 1st argument of isdigit().
+
+	* charresize.c: Include strings.h and sys/sysmacros.h.
+	(get_byte): Explicit casting of 1st argument of isxdigit().
+
+2000-12-11  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize-1.5pre1 Release.
+
+2000-12-09  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize.c: Rename isnumber() to isnum() so as to avoid
+	confliction with the built-in macro on some systems.
+
+2000-12-08  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize.1: Rename from bdfresize.man
+
+	* bdfresize.c: Include string.h instead of strings.h
+
+	* charresize.c: Ditto.
+
+2000-12-07  Kazuhiko  <kazuhiko@ring.gr.jp>
+
+	* bdfresize.c (get_line): Use fgets() instead of DANGEROUS gets().
+
+	* def.h : Remove definition of VERSION.
+
+	* AUTHORS: New file.
+
+	* config.h.in: Ditto. 
+
+	* configure.in: Ditto. 
+
+	* Makefile.am: Ditto. 
+
+	* VERSION: Ditto. 
